@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "o2b/r48IvxwxAe7QuYXAWetvCiiaV30aJnc8zrQ7N5bK+Fq4eAx4tw45nvBR40FXNh9xgsX3za5F5snw4Vvr0Q==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Devid\\Desktop\\modeli\\ModeliLabs\\ModeliLabs\\Laba1\\Laba1.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Devid\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0-preview.8.20407.11\\microsoft.netcore.platforms.5.0.0-preview.8.20407.11.nupkg.sha512",
+    "C:\\Users\\Devid\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0-preview.8.20407.11\\microsoft.win32.systemevents.5.0.0-preview.8.20407.11.nupkg.sha512",
+    "C:\\Users\\Devid\\.nuget\\packages\\system.drawing.common\\5.0.0-preview.8.20407.11\\system.drawing.common.5.0.0-preview.8.20407.11.nupkg.sha512",
+    "C:\\Users\\Devid\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.0.1\\microsoft.aspnetcore.app.ref.3.0.1.nupkg.sha512",
+    "C:\\Users\\Devid\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.0.3\\microsoft.netcore.app.host.win-x64.3.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

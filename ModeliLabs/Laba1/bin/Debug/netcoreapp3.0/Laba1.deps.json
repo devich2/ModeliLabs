@@ -1,0 +1,93 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.0": {
+      "Laba1/1.0.0": {
+        "dependencies": {
+          "System.Drawing.Common": "5.0.0-preview.8.20407.11"
+        },
+        "runtime": {
+          "Laba1.dll": {}
+        }
+      },
+      "Microsoft.NETCore.Platforms/5.0.0-preview.8.20407.11": {},
+      "Microsoft.Win32.SystemEvents/5.0.0-preview.8.20407.11": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "5.0.0-preview.8.20407.11"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Win32.SystemEvents.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.20.40711"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/netcoreapp3.0/Microsoft.Win32.SystemEvents.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.20.40711"
+          }
+        }
+      },
+      "System.Drawing.Common/5.0.0-preview.8.20407.11": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "5.0.0-preview.8.20407.11",
+          "Microsoft.Win32.SystemEvents": "5.0.0-preview.8.20407.11"
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Drawing.Common.dll": {
+            "assemblyVersion": "4.0.0.1",
+            "fileVersion": "4.6.26919.2"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/unix/lib/netcoreapp3.0/System.Drawing.Common.dll": {
+            "rid": "unix",
+            "assetType": "runtime",
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.20.40711"
+          },
+          "runtimes/win/lib/netcoreapp3.0/System.Drawing.Common.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.20.40711"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Laba1/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.NETCore.Platforms/5.0.0-preview.8.20407.11": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-r1yAhsxC6fvVkOwikgfC3T5m+kRjXbfLsHd8+p1EE9JTUqOkZPm3lzco2naZqMseBI8v/Ws0M/tGfBTe5Dj0ZQ==",
+      "path": "microsoft.netcore.platforms/5.0.0-preview.8.20407.11",
+      "hashPath": "microsoft.netcore.platforms.5.0.0-preview.8.20407.11.nupkg.sha512"
+    },
+    "Microsoft.Win32.SystemEvents/5.0.0-preview.8.20407.11": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-TLcacbHCpoXrwtsS6ZbAd3Ockh628bGoXujs4I//QSmN5t+uCfb8v3TrbmDmnRtE6G9dHQu1Iih3HGW53J1noA==",
+      "path": "microsoft.win32.systemevents/5.0.0-preview.8.20407.11",
+      "hashPath": "microsoft.win32.systemevents.5.0.0-preview.8.20407.11.nupkg.sha512"
+    },
+    "System.Drawing.Common/5.0.0-preview.8.20407.11": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-UO+cpFEnXyUSupwz/XwtWLzt+38mYZG6xf/0qbxpDzZKG9TmzG0SDy4NGXZpNtov2cUIUDSWwaRG/mnAcgYyUg==",
+      "path": "system.drawing.common/5.0.0-preview.8.20407.11",
+      "hashPath": "system.drawing.common.5.0.0-preview.8.20407.11.nupkg.sha512"
+    }
+  }
+}
