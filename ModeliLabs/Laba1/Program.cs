@@ -7,26 +7,6 @@ namespace Laba1
 {
     class Program
     {
-        private static List<double> Process(List<double> data, Distribution distribution)
-        {
-            double u = data.Sum(x=>x) / data.Count;
-            double dispers = data.Sum(x=>Math.Pow(x - u, 2))/(data.Count-1);
-            Console.WriteLine($"Average:{u}, Dispersiya: {dispers}");
-            
-            switch (distribution)
-            {
-                case Distribution.Exp:
-                    DistributionChecker.CheckExp(data, u, dispers);
-                    break;
-                case Distribution.Normal:
-                    DistributionChecker.CheckNormal(data, u, dispers);
-                    break;
-                case Distribution.Uniform:
-                    DistributionChecker.CheckUniform(data, u, dispers);
-                    break;
-            }
-        }
-        
         static void Main(string[] args)
         {
             const double lambda = 2, sigma = 3;
@@ -39,13 +19,13 @@ namespace Laba1
                 switch (Console.ReadLine())
                 {
                     case"1": 
-                        new HistogramBuilder(list = Process(RandomGenerator.GenerateByExpRule(lambda, quantity), Distribution.Exp), 1);
+                        new HistogramBuilder(new ExponentialDistribution(RandomGenerator.GenerateByExpRule(lambda, quantity)).Data, 1);
                         break;
                     case"2": 
-                        new HistogramBuilder(list = Process(RandomGenerator.GenerateByNormalRule(lambda, sigma, quantity), Distribution.Normal), 2);
+                        new HistogramBuilder(new NormalDistribution(RandomGenerator.GenerateByNormalRule(lambda, sigma, quantity)).Data, 2);
                         break;
                     case"3": 
-                        new HistogramBuilder(list = Process(RandomGenerator.GenerateByExpRule(lambda, quantity), Distribution.Uniform), 3);
+                        new HistogramBuilder(new UniformDistribution(RandomGenerator.GenerateByUniformRule(a, c, quantity)).Data, 3);
                         break;
                     case"4":
                         Environment.Exit(0);
