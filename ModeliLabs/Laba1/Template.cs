@@ -118,7 +118,7 @@ namespace Laba1
             }
             do
             {
-                size /= 10;
+                size /= 5;
                 amount++;
             } while (size >= 10);
             return amount * 10;

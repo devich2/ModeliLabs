@@ -7,10 +7,10 @@ namespace Laba1
     {
         protected override double FunctionValue(double x)
         {
-            double average = CountAverage();
-            double dispersion = Math.Sqrt(CountDispersion());
-            double lambda = (1 / average + 1 / dispersion) / 2;
-            return 1 - Math.Pow(Math.E, -x * lambda);
+            double average = this.CountAverage();
+            double dispersion = this.CountDispersion();
+            return Math.Pow(Math.E, -(Math.Pow(x - average, 2) / (2 * dispersion)))
+                   / Math.Sqrt(2 * dispersion * Math.PI);
         }
 
         public ExponentialDistribution(List<double> data) : base(data)
