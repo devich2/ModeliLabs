@@ -58,7 +58,8 @@ namespace Laba2
 
                 if (nextEvent == 0)
                     Event0();
-                else if (nextEvent == 1) Event1();
+                else if (nextEvent == 1) 
+                    Event1();
 
                 if (print)
                     PrintInfo();
