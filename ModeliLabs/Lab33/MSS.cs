@@ -55,6 +55,16 @@ namespace Lab33
                 }
                 else
                 {
+                    if(obj is Create)
+                    {
+                        obj.OutAct(null);
+                    }
+                    
+                    if (obj is Processor processor)
+                    {
+                        processor.Parent.OutAct(obj);
+                    }
+                    
                     result = ResultMove.Fail;
                 }
             }
@@ -102,7 +112,7 @@ namespace Lab33
                     }
                 }
                 else
-                { 
+                {
                     NotCheckedElements.Remove(nextElement);
                     OutAct(freedElement);
                 }
@@ -147,15 +157,12 @@ namespace Lab33
         }
         public int GetState()
         {
-            int State = 0;
+            int state = 0;
             for (int i = 0; i < Processors.Length; i++)
             {
-                if (State != 2)
-                {
-                    State += Processors[i].State;
-                }
+                state += (state != 2 ? Processors[i].State : 1);
             }
-            return State;
+            return state;
         }
 
         private Processor FindFree()

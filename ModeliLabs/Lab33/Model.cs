@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Lab33
 {
@@ -171,6 +172,7 @@ namespace Lab33
             {
                 if (e is Mss model)
                 {
+                    model.Failure += model.Processors.Sum(x=>x.Failure);
                     countModels++;
                     model.MeanQueue /= _tcurr;
                     MeanQueue += model.MeanQueue;
@@ -179,7 +181,7 @@ namespace Lab33
                         (model.Failure == 0 || divider == 0) 
                             ? 0 : model.Failure/ divider;
                     model.RAver /= _tcurr;
-                    RAver += model.RAver;
+                    RAver = RAver + model.RAver;
                 }
                 Failures += e.Failure;
             }

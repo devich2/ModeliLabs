@@ -7,7 +7,7 @@
         public Processor(Mss parent): base()
         {
             Parent = parent;
-            Name = $"PROCESSOR#{Parent.Processors.Length} of {parent.Name}";
+            Name = $"PROCESSOR#{Parent.Processors.Length}";
         }
     }
 }

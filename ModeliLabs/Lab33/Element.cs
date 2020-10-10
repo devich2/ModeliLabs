@@ -24,13 +24,13 @@ namespace Lab33
         public Element()
         {
             quantity = 0;
-            DelayMean = 1.0;
             Distribution = "exp";
-            Tnext = GetDelay();
+            Tnext = Double.MaxValue;
             Tcurr = 0.0;
             State = 0;
             NextElements = new List<Element>();
             PreviousElements = new List<Element>();
+            NotCheckedElements = new List<Element>();
             Id = nextId;
             nextId++;
             Name = "element" + Id;
@@ -40,16 +40,13 @@ namespace Lab33
             Name = "anonymus";
             DelayMean = delay;
             Distribution = "";
+            Tnext = GetDelay();
         }
         public Element(string name, double delay) : this(delay)
         {
             Name = name;
         }
-        public Element(double delayMean, double delayDev) : this(delayMean)
-        {
-            Distribution = "exp";
-            DelayDev = delayDev;
-        }
+
         public double GetDelay()
         {
             double delay = DelayMean;

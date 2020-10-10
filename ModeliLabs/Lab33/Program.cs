@@ -16,7 +16,7 @@ namespace Lab33
                 switch (Console.ReadKey().KeyChar)
                 {
                     #region 1
-        
+                
                     case '1':
                     {
                         Console.Clear();
@@ -24,10 +24,10 @@ namespace Lab33
                         try
                         {
                             
-                            double delayCreate = 2, time = 5000, delayProcess = 11;
+                            double delayCreate = 2, time = 100, delayProcess = 11;
                             int maxQ = 4;
                             string distribution;
-
+                
                             // Console.Write("Enter time: ");
                             // time = Convert.ToDouble(Console.ReadLine());
                             // Console.Write("Enter delayCreate: ");
@@ -36,16 +36,16 @@ namespace Lab33
                             // delayProcess = Convert.ToDouble(Console.ReadLine());
                             // Console.Write("Enter maxQ: ");
                             // maxQ = Convert.ToInt32(Console.ReadLine());
-                            distribution = "exp";
+                            distribution = "norm";
                             
                             Create c = new Create(delayCreate, distribution, "CREATOR");
                             Mss mss1 = new Mss(delayProcess, 1, maxQ, distribution, "MSS1", false);
                             Mss mss2 = new Mss(delayProcess, 1, maxQ, distribution, "MSS2", false);
                             Mss mss3 = new Mss(delayProcess, 1, maxQ, distribution, "MSS3", false);
                             Mss mss4 = new Mss(delayProcess, 1, maxQ, distribution, "MSS4", false);
-                            Despose d1 = new Despose(delayProcess, "DESPOSER1", distribution);
-                            Despose d2 = new Despose(delayProcess, "DESPOSER2", distribution);
-
+                            Despose d1 = new Despose(delayProcess, "DESPOSER1");
+                            Despose d2 = new Despose(delayProcess, "DESPOSER2");
+                
                             Path helper = new Path();
                             helper.SetPathCreateToMss(c, mss1);
                             helper.SetPathCreateToDespose(c, d2);
@@ -79,25 +79,25 @@ namespace Lab33
                             Console.ReadKey();
                             continue;
                         }
-        
+                
                         break;
                     }
-        
+                
                     #endregion
-        
+                
                     #region 2
-        
+                
                     case '2':
                     {
                        
                         Console.Clear();
                         int choice;
                         
-                            double time = 100, delayCreate, delayProcess;
+                            double time = 1000, delayCreate, delayProcess;
                             int maxQ;
                             string distribution;
                             Console.Write("Enter launch amount: ");
-                            choice = Convert.ToInt32(Console.ReadLine());
+                            choice = 10;//Convert.ToInt32(Console.ReadLine());
                             if (choice <= 0)
                             {
                                 throw new Exception();
@@ -113,7 +113,7 @@ namespace Lab33
                             var table = new ConsoleTable("ктс", "одо", "сзп", "ko", "vo", "сдо");
                             
                             delayCreate = 1; 
-                            delayProcess = 11; // ++
+                            delayProcess = 20; // ++
                             maxQ = 10;
                         
                             distribution = "exp";
@@ -125,8 +125,8 @@ namespace Lab33
                                 Mss mss2 = new Mss(delayProcess, 1, maxQ, distribution, "MSS2", false);
                                 Mss mss3 = new Mss(delayProcess, 1, maxQ, distribution, "MSS3", false);
                                 Mss mss4 = new Mss(delayProcess, 1, maxQ, distribution, "MSS4", false);
-                                Despose d1 = new Despose(delayProcess, "DESPOSER1", distribution);
-                                Despose d2 = new Despose(delayProcess, "DESPOSER2", distribution);
+                                Despose d1 = new Despose(delayProcess, "DESPOSER1");
+                                Despose d2 = new Despose(delayProcess, "DESPOSER2");
 
                                 Path helper = new Path();
                                 helper.SetPathCreateToMss(c, mss1);
@@ -161,7 +161,7 @@ namespace Lab33
                                     maxQ,
                                     Math.Round(model.RAver, 5),
                                     model.Failures,
-                                    Math.Round(model.PFailure, 5),
+                                    Math.Round(model.PFailure, 3),
                                     Math.Round(model.MeanQueue, 5));
                         
                                 choice--;

@@ -9,6 +9,7 @@
        public Create(double delay, string dist, string name) : base(name, delay)
        {
            Tnext = 0.0;
+           Distribution = dist;
        }
        public override void OutAct(Element obj)
        {
