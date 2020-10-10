@@ -48,10 +48,10 @@ namespace Lab33
                 
                             Path helper = new Path();
                             helper.SetPathCreateToMss(c, mss1);
-                            helper.SetPathCreateToDespose(c, d2);
+                           // helper.SetPathCreateToDespose(c, d2);
                             helper.SetPathMssToMss(mss1, mss2);
                             helper.SetPathMssToMss(mss1, mss3);
-                            helper.SetPathMssToDespose(mss2, d1);
+                           // helper.SetPathMssToDespose(mss2, d1);
                             helper.SetPathMssToMss(mss3, mss4);
                             helper.SetPathMssToDespose(mss4, d2);
                             helper.SetPathMssToMss(mss4, mss1);

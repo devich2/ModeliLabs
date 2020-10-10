@@ -1,4 +1,6 @@
-﻿namespace Lab33
+﻿using System.Collections.Generic;
+
+namespace Lab33
 {
    public class Create: Element
    {
@@ -17,13 +19,11 @@
            Tnext = Tcurr + GetDelay();
            if (NotCheckedElements.Count != 0)
            {
-               if(NotCheckedElements[ChooseNextElement()].InAct(this) != ResultMove.Ok)
-               {
-                   Failure++;
-               };
+               NotCheckedElements[ChooseNextElement()].InAct(this);
            }
            else
            {
+               NotCheckedElements = new List<Element>(NextElements);
                Failure++;
            }
        } 

@@ -55,16 +55,11 @@ namespace Lab33
                 }
                 else
                 {
-                    if(obj is Create)
+                    if(obj is Create cr)
                     {
-                        obj.OutAct(null);
+                        Failure++;
+                        cr.BLockMove(this);
                     }
-                    
-                    if (obj is Processor processor)
-                    {
-                        processor.Parent.OutAct(obj);
-                    }
-                    
                     result = ResultMove.Fail;
                 }
             }
