@@ -1,0 +1,15 @@
+C:\Users\Devid\Desktop\modeli\ModeliLabs\ModeliLabs\Lab33\bin\Debug\netcoreapp3.0\Lab33.exe
+C:\Users\Devid\Desktop\modeli\ModeliLabs\ModeliLabs\Lab33\bin\Debug\netcoreapp3.0\Lab33.deps.json
+C:\Users\Devid\Desktop\modeli\ModeliLabs\ModeliLabs\Lab33\bin\Debug\netcoreapp3.0\Lab33.runtimeconfig.json
+C:\Users\Devid\Desktop\modeli\ModeliLabs\ModeliLabs\Lab33\bin\Debug\netcoreapp3.0\Lab33.runtimeconfig.dev.json
+C:\Users\Devid\Desktop\modeli\ModeliLabs\ModeliLabs\Lab33\bin\Debug\netcoreapp3.0\Lab33.dll
+C:\Users\Devid\Desktop\modeli\ModeliLabs\ModeliLabs\Lab33\bin\Debug\netcoreapp3.0\Lab33.pdb
+C:\Users\Devid\Desktop\modeli\ModeliLabs\ModeliLabs\Lab33\bin\Debug\netcoreapp3.0\ConsoleTables.dll
+C:\Users\Devid\Desktop\modeli\ModeliLabs\ModeliLabs\Lab33\obj\Debug\netcoreapp3.0\Lab33.csprojAssemblyReference.cache
+C:\Users\Devid\Desktop\modeli\ModeliLabs\ModeliLabs\Lab33\obj\Debug\netcoreapp3.0\Lab33.AssemblyInfoInputs.cache
+C:\Users\Devid\Desktop\modeli\ModeliLabs\ModeliLabs\Lab33\obj\Debug\netcoreapp3.0\Lab33.AssemblyInfo.cs
+C:\Users\Devid\Desktop\modeli\ModeliLabs\ModeliLabs\Lab33\obj\Debug\netcoreapp3.0\Lab33.csproj.CoreCompileInputs.cache
+C:\Users\Devid\Desktop\modeli\ModeliLabs\ModeliLabs\Lab33\obj\Debug\netcoreapp3.0\Lab33.csproj.CopyComplete
+C:\Users\Devid\Desktop\modeli\ModeliLabs\ModeliLabs\Lab33\obj\Debug\netcoreapp3.0\Lab33.dll
+C:\Users\Devid\Desktop\modeli\ModeliLabs\ModeliLabs\Lab33\obj\Debug\netcoreapp3.0\Lab33.pdb
+C:\Users\Devid\Desktop\modeli\ModeliLabs\ModeliLabs\Lab33\obj\Debug\netcoreapp3.0\Lab33.genruntimeconfig.cache
