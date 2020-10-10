@@ -48,10 +48,10 @@ namespace Lab33
                 
                             Path helper = new Path();
                             helper.SetPathCreateToMss(c, mss1);
-                           // helper.SetPathCreateToDespose(c, d2);
+                            helper.SetPathCreateToDespose(c, d2);
                             helper.SetPathMssToMss(mss1, mss2);
                             helper.SetPathMssToMss(mss1, mss3);
-                           // helper.SetPathMssToDespose(mss2, d1);
+                            helper.SetPathMssToDespose(mss2, d1);
                             helper.SetPathMssToMss(mss3, mss4);
                             helper.SetPathMssToDespose(mss4, d2);
                             helper.SetPathMssToMss(mss4, mss1);
@@ -113,7 +113,7 @@ namespace Lab33
                             var table = new ConsoleTable("ктс", "одо", "сзп", "ko", "vo", "сдо");
                             
                             delayCreate = 1; 
-                            delayProcess = 20; // ++
+                            delayProcess = 3; // ++
                             maxQ = 10;
                         
                             distribution = "exp";
@@ -130,9 +130,11 @@ namespace Lab33
 
                                 Path helper = new Path();
                                 helper.SetPathCreateToMss(c, mss1);
-                                helper.SetPathCreateToDespose(c, d2);
+                                //helper.SetPathCreateToDespose(c, d2);
                                 helper.SetPathMssToMss(mss1, mss2);
+                                helper.SetPathMssToMss(mss2, mss1);
                                 helper.SetPathMssToMss(mss1, mss3);
+                                helper.SetPathMssToMss(mss3, mss1);
                                 helper.SetPathMssToDespose(mss2, d1);
                                 helper.SetPathMssToMss(mss3, mss4);
                                 helper.SetPathMssToDespose(mss4, d2);
@@ -153,8 +155,8 @@ namespace Lab33
                                 model.Simulate(time);
                                 
                         
-                                delayCreate++; //--
-                                delayProcess--;
+                                // delayCreate++; //--
+                                // delayProcess--;
                                 Console.WriteLine(model.PFailure);
                                 table.AddRow(
                                     list.First().GetQuantity(),

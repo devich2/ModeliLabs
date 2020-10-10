@@ -16,7 +16,7 @@ namespace Lab33
         public List<Element> NextElements { get; set; }
         public List<Element> PreviousElements { get; set; }
         public List<Element> NotCheckedElements { get; set; }
-        
+        public static int Fuck;
         
         public int Id { get; set; }
         private int quantity;
@@ -50,6 +50,7 @@ namespace Lab33
         public double GetDelay()
         {
             double delay = DelayMean;
+            return delay;
             switch (Distribution.ToLower())
             {
                 case "exp":

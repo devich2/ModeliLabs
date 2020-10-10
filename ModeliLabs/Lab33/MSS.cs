@@ -55,10 +55,9 @@ namespace Lab33
                 }
                 else
                 {
-                    if(obj is Create cr)
+                    if(obj is Create create)
                     {
-                        Failure++;
-                        cr.BLockMove(this);
+                        create.BLockMove(this);
                     }
                     result = ResultMove.Fail;
                 }
@@ -87,22 +86,23 @@ namespace Lab33
                         
                         if (Queue < MaxQueue)
                         {
-                            Mss smoWithBlockedProcessor = (Mss)PreviousElements.FirstOrDefault(x=>
+                            foreach (var prevItem in PreviousElements.Where(x=>x is Create).Take(MaxQueue - Queue))
                             {
-                                if(x is Mss mss)
-                                {
-                                    return mss.Processors.Any(p=>p.State == 2);
-                                }
-                                return false;
-                            });
-                            
-                            if (smoWithBlockedProcessor != null)
-                            {
-                                Processor blockedProc = smoWithBlockedProcessor.Processors.First(x=>x.State == 2);
-                                Queue++;
-                                blockedProc.State = 0;
-                                smoWithBlockedProcessor.NotCheckedElements = new List<Element>(smoWithBlockedProcessor.NextElements);
+                                prevItem.NotCheckedElements.Add(this);
                             }
+                            // foreach (var prevElem in PreviousElements.Where(x=>!x.NotCheckedElements.Contains(this)).Take(MaxQueue - Queue))
+                            // {
+                            //      prevElem.NotCheckedElements.Add(this);
+                            //      if(prevElem is Mss mss)
+                            //      {
+                            //          Processor blockedProc = mss.Processors.FirstOrDefault(x=>x.State == 2);
+                            //          if(blockedProc != null)
+                            //          {
+                            //              Queue++;
+                            //              blockedProc.State = 0;   
+                            //          }
+                            //      }
+                            // }
                         }
                     }
                 }
@@ -114,18 +114,18 @@ namespace Lab33
             }
             else
             {
-                if(freedElement.State == 2)
-                {
+                // if(freedElement.State == 2)
+                // {
+                //     Failure++;
+                // }
+                // else if(!FailWhenNoMove)
+                // {
+                //     freedElement.State = 2;
+                // }
+                // else
+                // {
                     Failure++;
-                }
-                else if(!FailWhenNoMove)
-                {
-                    freedElement.State = 2;
-                }
-                else
-                {
-                    Failure++;
-                }
+               // }
             }
         }
         public override void SetTCurr(double time)

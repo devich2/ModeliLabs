@@ -23,7 +23,6 @@ namespace Lab33
            }
            else
            {
-               NotCheckedElements = new List<Element>(NextElements);
                Failure++;
            }
        } 

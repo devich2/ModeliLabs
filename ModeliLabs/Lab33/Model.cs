@@ -181,12 +181,10 @@ namespace Lab33
                         (model.Failure == 0 || divider == 0) 
                             ? 0 : model.Failure/ divider;
                     model.RAver /= _tcurr;
-                    RAver = RAver + model.RAver;
+                    RAver += model.RAver;
                 }
                 Failures += e.Failure;
             }
-            MeanQueue /= countModels;
-            PFailure /= countModels;
             RAver /= countModels;
         }
 
