@@ -1,0 +1,15 @@
+C:\Users\Devid\Desktop\modeli\ModeliLabs\ModeliLabs\Laba4Task1\bin\Debug\netcoreapp3.0\Laba4Task1.exe
+C:\Users\Devid\Desktop\modeli\ModeliLabs\ModeliLabs\Laba4Task1\bin\Debug\netcoreapp3.0\Laba4Task1.deps.json
+C:\Users\Devid\Desktop\modeli\ModeliLabs\ModeliLabs\Laba4Task1\bin\Debug\netcoreapp3.0\Laba4Task1.runtimeconfig.json
+C:\Users\Devid\Desktop\modeli\ModeliLabs\ModeliLabs\Laba4Task1\bin\Debug\netcoreapp3.0\Laba4Task1.runtimeconfig.dev.json
+C:\Users\Devid\Desktop\modeli\ModeliLabs\ModeliLabs\Laba4Task1\bin\Debug\netcoreapp3.0\Laba4Task1.dll
+C:\Users\Devid\Desktop\modeli\ModeliLabs\ModeliLabs\Laba4Task1\bin\Debug\netcoreapp3.0\Laba4Task1.pdb
+C:\Users\Devid\Desktop\modeli\ModeliLabs\ModeliLabs\Laba4Task1\bin\Debug\netcoreapp3.0\ConsoleTables.dll
+C:\Users\Devid\Desktop\modeli\ModeliLabs\ModeliLabs\Laba4Task1\obj\Debug\netcoreapp3.0\Laba4Task1.csprojAssemblyReference.cache
+C:\Users\Devid\Desktop\modeli\ModeliLabs\ModeliLabs\Laba4Task1\obj\Debug\netcoreapp3.0\Laba4Task1.AssemblyInfoInputs.cache
+C:\Users\Devid\Desktop\modeli\ModeliLabs\ModeliLabs\Laba4Task1\obj\Debug\netcoreapp3.0\Laba4Task1.AssemblyInfo.cs
+C:\Users\Devid\Desktop\modeli\ModeliLabs\ModeliLabs\Laba4Task1\obj\Debug\netcoreapp3.0\Laba4Task1.csproj.CoreCompileInputs.cache
+C:\Users\Devid\Desktop\modeli\ModeliLabs\ModeliLabs\Laba4Task1\obj\Debug\netcoreapp3.0\Laba4Task1.csproj.CopyComplete
+C:\Users\Devid\Desktop\modeli\ModeliLabs\ModeliLabs\Laba4Task1\obj\Debug\netcoreapp3.0\Laba4Task1.dll
+C:\Users\Devid\Desktop\modeli\ModeliLabs\ModeliLabs\Laba4Task1\obj\Debug\netcoreapp3.0\Laba4Task1.pdb
+C:\Users\Devid\Desktop\modeli\ModeliLabs\ModeliLabs\Laba4Task1\obj\Debug\netcoreapp3.0\Laba4Task1.genruntimeconfig.cache

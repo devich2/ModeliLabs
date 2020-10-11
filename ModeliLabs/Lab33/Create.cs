@@ -26,7 +26,6 @@ namespace Lab33
                base.OutAct(null);  //quantity
                Tnext = Tcurr + GetDelay();
            }
-
            if(NotCheckedElements.Any())
            {
                var nextElement = NotCheckedElements[ChooseNextElement()];

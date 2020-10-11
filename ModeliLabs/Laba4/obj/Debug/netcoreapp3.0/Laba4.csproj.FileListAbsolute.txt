@@ -1,0 +1,15 @@
+C:\Users\Devid\Desktop\modeli\ModeliLabs\ModeliLabs\Laba4\bin\Debug\netcoreapp3.0\Laba4.exe
+C:\Users\Devid\Desktop\modeli\ModeliLabs\ModeliLabs\Laba4\bin\Debug\netcoreapp3.0\Laba4.deps.json
+C:\Users\Devid\Desktop\modeli\ModeliLabs\ModeliLabs\Laba4\bin\Debug\netcoreapp3.0\Laba4.runtimeconfig.json
+C:\Users\Devid\Desktop\modeli\ModeliLabs\ModeliLabs\Laba4\bin\Debug\netcoreapp3.0\Laba4.runtimeconfig.dev.json
+C:\Users\Devid\Desktop\modeli\ModeliLabs\ModeliLabs\Laba4\bin\Debug\netcoreapp3.0\Laba4.dll
+C:\Users\Devid\Desktop\modeli\ModeliLabs\ModeliLabs\Laba4\bin\Debug\netcoreapp3.0\Laba4.pdb
+C:\Users\Devid\Desktop\modeli\ModeliLabs\ModeliLabs\Laba4\bin\Debug\netcoreapp3.0\ConsoleTables.dll
+C:\Users\Devid\Desktop\modeli\ModeliLabs\ModeliLabs\Laba4\obj\Debug\netcoreapp3.0\Laba4.csprojAssemblyReference.cache
+C:\Users\Devid\Desktop\modeli\ModeliLabs\ModeliLabs\Laba4\obj\Debug\netcoreapp3.0\Laba4.AssemblyInfoInputs.cache
+C:\Users\Devid\Desktop\modeli\ModeliLabs\ModeliLabs\Laba4\obj\Debug\netcoreapp3.0\Laba4.AssemblyInfo.cs
+C:\Users\Devid\Desktop\modeli\ModeliLabs\ModeliLabs\Laba4\obj\Debug\netcoreapp3.0\Laba4.csproj.CoreCompileInputs.cache
+C:\Users\Devid\Desktop\modeli\ModeliLabs\ModeliLabs\Laba4\obj\Debug\netcoreapp3.0\Laba4.csproj.CopyComplete
+C:\Users\Devid\Desktop\modeli\ModeliLabs\ModeliLabs\Laba4\obj\Debug\netcoreapp3.0\Laba4.dll
+C:\Users\Devid\Desktop\modeli\ModeliLabs\ModeliLabs\Laba4\obj\Debug\netcoreapp3.0\Laba4.pdb
+C:\Users\Devid\Desktop\modeli\ModeliLabs\ModeliLabs\Laba4\obj\Debug\netcoreapp3.0\Laba4.genruntimeconfig.cache

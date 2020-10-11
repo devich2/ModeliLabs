@@ -106,7 +106,7 @@ namespace Lab33
                             var table = new ConsoleTable("quantity", "max queue", "fails", "pfail", "meanquee1", "raver1", "meanquee2", "raver2", "meanquee3", "raver3", "meanquee4", "raver4");
                             
                             delayCreate = 1; 
-                            delayProcess = 2;
+                            delayProcess = 1;
                             maxQ = 10;
                         
                             distribution = "exp";
@@ -159,7 +159,7 @@ namespace Lab33
                                     mss3.RAver,
                                     mss4.MeanQueue,
                                     mss4.RAver);
-                                
+                                delayProcess++;
                                 choice--;
                             }
                         
