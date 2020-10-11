@@ -6,7 +6,7 @@ namespace Lab33
 {
     public class Model
     {
-        private int MaxDetectedQueue { get; set; }
+        public int MaxDetectedQueue { get; set; }
         public double MeanQueue { get; set; }
         public int MaxSumStates { get; set; }
         public double RAver { get; set; }
@@ -167,27 +167,15 @@ namespace Lab33
 
         private void DoStatistics()
         {
-            int countModels = 0;
-            foreach (Element e in _list)
+            var smos = _list.OfType<Mss>().ToList();
+
+            foreach (var smo in smos)
             {
-                if (e is Mss model)
-                {
-                    model.Failure += model.Processors.Sum(x=>x.Failure);
-                    countModels++;
-                    model.MeanQueue /= _tcurr;
-                    MeanQueue += model.MeanQueue;
-                    double divider = model.GetQuantity() + model.Failure + model.Queue + model.GetState();
-                    PFailure += 
-                        (model.Failure == 0 || divider == 0) 
-                            ? 0 : model.Failure/ divider;
-                    model.RAver /= _tcurr;
-                    RAver = RAver + model.RAver;
-                }
-                Failures += e.Failure;
+                smo.RAver/=_tcurr;
+                smo.MeanQueue/=_tcurr;
             }
-            MeanQueue /= countModels;
-            PFailure /= countModels;
-            RAver /= countModels;
+            Failures = _list.Sum(x=>x.Failure);
+            PFailure = Failures/(double)_list.First().GetQuantity();
         }
 
         private void InitNotChecked()

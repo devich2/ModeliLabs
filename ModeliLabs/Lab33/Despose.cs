@@ -9,6 +9,7 @@ namespace Lab33
         {
             //Console.WriteLine("1t's time for event in " + this.Name + ", time =    " + this.Tcurr);
             base.OutAct(null);
+            //Tnext = Tcurr + GetDelay();
             return ResultMove.Ok;
         }
     }

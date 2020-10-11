@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Lab33
 {
@@ -85,7 +86,7 @@ namespace Lab33
         }
         public virtual void BLockMove(Element obj)
         {
-            NotCheckedElements.Remove(obj);
+            NotCheckedElements = NotCheckedElements.Except(new []{obj}).ToList();
         }
 
         protected int ChooseNextElement()

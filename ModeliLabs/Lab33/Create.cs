@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace Lab33
 {
@@ -13,13 +14,31 @@ namespace Lab33
            Tnext = 0.0;
            Distribution = dist;
        }
+
+       public Create()
+       {
+       }
+
        public override void OutAct(Element obj)
        {
-           base.OutAct(null);
-           Tnext = Tcurr + GetDelay();
-           if (NotCheckedElements.Count != 0)
+           if(NotCheckedElements.Count == NextElements.Count) // Create
            {
-               NotCheckedElements[ChooseNextElement()].InAct(this);
+               base.OutAct(null);  //quantity
+               Tnext = Tcurr + GetDelay();
+           }
+
+           if(NotCheckedElements.Any())
+           {
+               var nextElement = NotCheckedElements[ChooseNextElement()];
+               if(nextElement.InAct(this) == ResultMove.Ok)
+               {
+                   NotCheckedElements = new List<Element>(NextElements);
+               }
+               else
+               {
+                   BLockMove(nextElement);
+                   OutAct(null);
+               }
            }
            else
            {

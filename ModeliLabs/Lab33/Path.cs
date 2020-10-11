@@ -5,6 +5,7 @@
         public void SetPathCreateToMss(Create creator, Mss mss)
         {
             creator.NextElements.Add(mss);
+            mss.PreviousElements.Add(creator);
         }
         public void SetPathMssToMss(Mss mss1, Mss mss2)
         {

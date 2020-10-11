@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.VisualBasic;
 
 namespace Lab33
 {
@@ -55,11 +56,6 @@ namespace Lab33
                 }
                 else
                 {
-                    if(obj is Create cr)
-                    {
-                        Failure++;
-                        cr.BLockMove(this);
-                    }
                     result = ResultMove.Fail;
                 }
             }
@@ -68,7 +64,19 @@ namespace Lab33
         public override void OutAct(Element obj)
         {
             Processor freedElement = (Processor)obj;
-            freedElement.Tnext = double.MaxValue;
+            if(NextElements.Count == NotCheckedElements.Count) 
+            {
+                base.OutAct(null);
+                freedElement.Tnext = Double.MaxValue;
+                freedElement.State = 0;
+                if (Queue > 0)
+                {
+                    Queue--;
+                    freedElement.State = 1;
+                    freedElement.Tnext = freedElement.Tcurr + GetDelay();
+                }
+            }
+
             if (NotCheckedElements.Count != 0)
             {    
                 Element nextElement = NotCheckedElements[ChooseNextElement()];  //get element to move
@@ -77,55 +85,17 @@ namespace Lab33
                 if (result == ResultMove.Ok)
                 {
                     NotCheckedElements = new List<Element>(NextElements);
-                    base.OutAct(null);
-                    freedElement.State = 0;
-                    if (Queue > 0)
-                    {
-                        Queue--;
-                        freedElement.State = 1;
-                        freedElement.Tnext = freedElement.Tcurr + GetDelay();
-                        
-                        if (Queue < MaxQueue)
-                        {
-                            Mss smoWithBlockedProcessor = (Mss)PreviousElements.FirstOrDefault(x=>
-                            {
-                                if(x is Mss mss)
-                                {
-                                    return mss.Processors.Any(p=>p.State == 2);
-                                }
-                                return false;
-                            });
-                            
-                            if (smoWithBlockedProcessor != null)
-                            {
-                                Processor blockedProc = smoWithBlockedProcessor.Processors.First(x=>x.State == 2);
-                                Queue++;
-                                blockedProc.State = 0;
-                                smoWithBlockedProcessor.NotCheckedElements = new List<Element>(smoWithBlockedProcessor.NextElements);
-                            }
-                        }
-                    }
                 }
                 else
                 {
-                    NotCheckedElements.Remove(nextElement);
+                    BLockMove(nextElement);
                     OutAct(freedElement);
                 }
             }
             else
             {
-                if(freedElement.State == 2)
-                {
-                    Failure++;
-                }
-                else if(!FailWhenNoMove)
-                {
-                    freedElement.State = 2;
-                }
-                else
-                {
-                    Failure++;
-                }
+                NotCheckedElements = new List<Element>(NextElements);
+                Failure++;
             }
         }
         public override void SetTCurr(double time)
@@ -147,8 +117,8 @@ namespace Lab33
         }
         public override void DoStatistics(double delta)
         {
-            MeanQueue += Queue * delta;
-            RAver += GetState() * delta;
+            MeanQueue += Queue * Math.Abs(delta);
+            RAver += GetState() * Math.Abs(delta);
         }
         public int GetState()
         {

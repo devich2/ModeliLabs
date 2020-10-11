@@ -24,8 +24,8 @@ namespace Lab33
                         try
                         {
                             
-                            double delayCreate = 2, time = 100, delayProcess = 11;
-                            int maxQ = 4;
+                            double delayCreate = 1, time = 1000, delayProcess = 2;
+                            int maxQ = 10;
                             string distribution;
                 
                             // Console.Write("Enter time: ");
@@ -36,7 +36,7 @@ namespace Lab33
                             // delayProcess = Convert.ToDouble(Console.ReadLine());
                             // Console.Write("Enter maxQ: ");
                             // maxQ = Convert.ToInt32(Console.ReadLine());
-                            distribution = "norm";
+                            distribution = "exp";
                             
                             Create c = new Create(delayCreate, distribution, "CREATOR");
                             Mss mss1 = new Mss(delayProcess, 1, maxQ, distribution, "MSS1", false);
@@ -48,10 +48,11 @@ namespace Lab33
                 
                             Path helper = new Path();
                             helper.SetPathCreateToMss(c, mss1);
+                           // helper.SetPathMssToDespose(mss1, d2);
                            // helper.SetPathCreateToDespose(c, d2);
                             helper.SetPathMssToMss(mss1, mss2);
                             helper.SetPathMssToMss(mss1, mss3);
-                           // helper.SetPathMssToDespose(mss2, d1);
+                            helper.SetPathMssToDespose(mss2, d1);
                             helper.SetPathMssToMss(mss3, mss4);
                             helper.SetPathMssToDespose(mss4, d2);
                             helper.SetPathMssToMss(mss4, mss1);
@@ -110,10 +111,10 @@ namespace Lab33
                                 "ко - количество фейл \n" +
                                 "во - вероятность фейла \n" +
                                 "сдо - средняя длина очереди в модели Х");
-                            var table = new ConsoleTable("ктс", "одо", "сзп", "ko", "vo", "сдо");
+                            var table = new ConsoleTable("quantity", "max queue", "fails", "pfail", "meanquee1", "raver1", "meanquee2", "raver2", "meanquee3", "raver3", "meanquee4", "raver4");
                             
                             delayCreate = 1; 
-                            delayProcess = 20; // ++
+                            delayProcess = 2; // ++
                             maxQ = 10;
                         
                             distribution = "exp";
@@ -127,10 +128,10 @@ namespace Lab33
                                 Mss mss4 = new Mss(delayProcess, 1, maxQ, distribution, "MSS4", false);
                                 Despose d1 = new Despose(delayProcess, "DESPOSER1");
                                 Despose d2 = new Despose(delayProcess, "DESPOSER2");
-
+                        
                                 Path helper = new Path();
                                 helper.SetPathCreateToMss(c, mss1);
-                                helper.SetPathCreateToDespose(c, d2);
+                                //helper.SetPathCreateToDespose(c, d2);
                                 helper.SetPathMssToMss(mss1, mss2);
                                 helper.SetPathMssToMss(mss1, mss3);
                                 helper.SetPathMssToDespose(mss2, d1);
@@ -151,18 +152,22 @@ namespace Lab33
                                 };
                                 Model model = new Model(list, false);
                                 model.Simulate(time);
-                                
+                              
                         
-                                delayCreate++; //--
-                                delayProcess--;
                                 Console.WriteLine(model.PFailure);
                                 table.AddRow(
                                     list.First().GetQuantity(),
-                                    maxQ,
-                                    Math.Round(model.RAver, 5),
+                                    model.MaxDetectedQueue,
                                     model.Failures,
                                     Math.Round(model.PFailure, 3),
-                                    Math.Round(model.MeanQueue, 5));
+                                    mss1.MeanQueue,
+                                    mss1.RAver,
+                                    mss2.MeanQueue,
+                                    mss2.RAver,
+                                    mss3.MeanQueue,
+                                    mss3.RAver,
+                                    mss4.MeanQueue,
+                                    mss4.RAver);
                         
                                 choice--;
                             }
