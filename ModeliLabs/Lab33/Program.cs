@@ -103,18 +103,10 @@ namespace Lab33
                             {
                                 throw new Exception();
                             }
-                        
-                            Console.WriteLine(
-                                "ктс - количество требований пришедших в сеть в модели\n" +
-                                "одо    - ограничение на длину очереди\n" +
-                                "сзп - средняя загрузка приборов в модели Х \n" +
-                                "ко - количество фейл \n" +
-                                "во - вероятность фейла \n" +
-                                "сдо - средняя длина очереди в модели Х");
                             var table = new ConsoleTable("quantity", "max queue", "fails", "pfail", "meanquee1", "raver1", "meanquee2", "raver2", "meanquee3", "raver3", "meanquee4", "raver4");
                             
                             delayCreate = 1; 
-                            delayProcess = 2; // ++
+                            delayProcess = 2;
                             maxQ = 10;
                         
                             distribution = "exp";
@@ -153,8 +145,7 @@ namespace Lab33
                                 Model model = new Model(list, false);
                                 model.Simulate(time);
                               
-                        
-                                Console.WriteLine(model.PFailure);
+                               // TableHelper.ShowInfo(model);
                                 table.AddRow(
                                     list.First().GetQuantity(),
                                     model.MaxDetectedQueue,
@@ -168,7 +159,7 @@ namespace Lab33
                                     mss3.RAver,
                                     mss4.MeanQueue,
                                     mss4.RAver);
-                        
+                                
                                 choice--;
                             }
                         

@@ -12,7 +12,7 @@ namespace Lab33
         public double RAver { get; set; }
         public int Failures { get; set; }
         public double PFailure { get; set; }
-        private readonly List<Element> _list;
+        public readonly List<Element> _list;
         private readonly bool _showInfo;
         double _tnext, _tcurr;
         int _eventIndex;
