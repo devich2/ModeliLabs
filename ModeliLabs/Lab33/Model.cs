@@ -135,7 +135,7 @@ namespace Lab33
         public void PrintTotalResult()
         {
             Console.WriteLine("\n-------------TOTAL RESULT-------------");
-            Console.WriteLine("mean length of queue = " + MeanQueue +
+            Console.WriteLine(//"mean length of queue = " + MeanQueue +
                 "\nmax length of queue =  = " + MaxDetectedQueue +
                 "\nfailure probability = " + PFailure +
                 "\nload average = " + RAver +

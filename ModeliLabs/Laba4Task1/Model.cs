@@ -174,14 +174,16 @@ namespace Laba4
         private void DoStatistics()
         {
             var smos = _list.OfType<Mss>().ToList();
-
             foreach (var smo in smos)
             {
                 smo.RAver/=_tcurr;
                 smo.MeanQueue/=_tcurr;
             }
+            TAver = smos.Sum(x=>(x.RAver + x.MeanQueue) / 2)/smos.Count;
             Failures = _list.Sum(x=>x.Failure);
-            PFailure = Failures/(double)_list.First().GetQuantity();
+            PFailure = (smos.Sum(x=>x.Failure/(double)(x.GetQuantity() + x.Queue + x.GetState())) + (_list.First().Failure/(double)_list.First().GetQuantity()))/_list.Count;
+            Tleave = _list.OfType<Despose>().Sum(x=>x.DeltaT/ (_list.First(x=>x is Create).GetQuantity() - Failures)) / _list.OfType<Despose>().Count();
+            SwapQueue = smos.Sum(x=>x.SwapQueue);
         }
 
         private void InitNotChecked()

@@ -61,42 +61,39 @@ namespace Lab33
             }
             return result;
         }
+        private  void BaseOutAct(Processor freedElement)
+        {
+            base.OutAct(null);
+            freedElement.Tnext = Double.MaxValue;
+            freedElement.State = 0;
+            if (Queue > 0)
+            {
+                Queue--;
+                freedElement.State = 1;
+                freedElement.Tnext = freedElement.Tcurr + GetDelay();
+            }   
+        }
         public override void OutAct(Element obj)
         {
             Processor freedElement = (Processor)obj;
-            if(NextElements.Count == NotCheckedElements.Count) 
-            {
-                base.OutAct(null);
-                freedElement.Tnext = Double.MaxValue;
-                freedElement.State = 0;
-                if (Queue > 0)
-                {
-                    Queue--;
-                    freedElement.State = 1;
-                    freedElement.Tnext = freedElement.Tcurr + GetDelay();
-                }
-            }
 
-            if (NotCheckedElements.Count != 0)
-            {    
+            BaseOutAct(freedElement);
+
+            while (NotCheckedElements.Any())
+            {
                 Element nextElement = NotCheckedElements[ChooseNextElement()];  //get element to move
                 ResultMove result = nextElement.InAct(freedElement);
                 
                 if (result == ResultMove.Ok)
                 {
                     NotCheckedElements = new List<Element>(NextElements);
+                    return;
                 }
-                else
-                {
-                    BLockMove(nextElement);
-                    OutAct(freedElement);
-                }
+                BLockMove(nextElement);
             }
-            else
-            {
-                NotCheckedElements = new List<Element>(NextElements);
-                Failure++;
-            }
+
+            NotCheckedElements = new List<Element>(NextElements);
+            Failure++;
         }
         public override void SetTCurr(double time)
         {

@@ -278,7 +278,7 @@ namespace Laba4Task1
                       #region 4
 
                       case '4':
-                          tableVer = new ConsoleTable("load average C1", "load average C2", "quantity",
+                          tableVer = new ConsoleTable("load average C1", "load average C2", "quantity", "failures",
                               "average leaving interval", "average residence time", "mean queue C1", "mean queue C2",
                               "failure probability", "queue swaps");
                               double timeLeave = 0,
@@ -289,7 +289,7 @@ namespace Laba4Task1
                               mss2MeanQueue = 0;
 
                           int quantity = 0,
-                              queueSwaps = 0;
+                              queueSwaps = 0, failures = 0;
                           runAmount = 10;
 
                           for (int i = 0; i < runAmount; i++)
@@ -326,42 +326,46 @@ namespace Laba4Task1
                                 6) відсоток клієнтів, яким відмовлено в обслуговуванні; 
                                 7) число змін під'їзних смуг.Визначити такі величини: 
                                 */
-                              mss1RAver += mss1.RAver / model.GetFinishTime() / runAmount;
-                              mss2RAver += mss2.RAver / model.GetFinishTime() / runAmount;
+                              mss1RAver += mss1.RAver;
+                              mss2RAver += mss2.RAver;
                               quantity += c.GetQuantity();
-                              timeLeave += model.Tleave / runAmount;
-                              timeResidence += model.TAver / runAmount;
-                              mss1MeanQueue += mss1.MeanQueue / model.GetFinishTime() / runAmount;
-                              mss2MeanQueue += mss2.MeanQueue / model.GetFinishTime() / runAmount;
-                              failuresProbabiliy += model.PFailure / runAmount;
+                              timeLeave += model.Tleave;
+                              timeResidence += model.TAver;
+                              mss1MeanQueue += mss1.MeanQueue;
+                              mss2MeanQueue += mss2.MeanQueue;
+                              failuresProbabiliy += model.PFailure;
                               queueSwaps += model.SwapQueue;
-
+                              int failedTotal =  mss1.Failure + mss2.Failure + c.Failure;
+                              failures += failedTotal;
                               tableVer.AddRow(
-                                  Math.Round(mss1.RAver / model.GetFinishTime(), 10),
-                                  Math.Round(mss2.RAver / model.GetFinishTime(), 10),
+                                  Math.Round(mss1.RAver, 10),
+                                  Math.Round(mss2.RAver, 10),
                                   c.GetQuantity(),
+                                  failedTotal,
                                   Math.Round(model.Tleave, 10),
                                   Math.Round(model.TAver, 10),
-                                  Math.Round(mss1.MeanQueue / model.GetFinishTime(), 10),
-                                  Math.Round(mss2.MeanQueue / model.GetFinishTime(), 10),
+                                  Math.Round(mss1.MeanQueue, 10),
+                                  Math.Round(mss2.MeanQueue, 10),
                                   Math.Round(model.PFailure, 10),
                                   model.SwapQueue);
                           }
 
-                          mss1RAver = Math.Round(mss1RAver, 10);
-                          mss2RAver = Math.Round(mss2RAver, 10);
+                          mss1RAver = Math.Round(mss1RAver/runAmount, 10);
+                          mss2RAver = Math.Round(mss2RAver/runAmount, 10);
                           quantity /= runAmount;
-                          timeLeave = Math.Round(timeLeave, 10);
-                          timeResidence = Math.Round(timeResidence, 10);
-                          mss1MeanQueue = Math.Round(mss1MeanQueue, 10);
-                          mss2MeanQueue = Math.Round(mss2MeanQueue, 10);
-                          failuresProbabiliy = Math.Round(failuresProbabiliy, 10);
+                          failures/=runAmount;
+                          timeLeave = Math.Round(timeLeave/runAmount, 10);
+                          timeResidence = Math.Round(timeResidence/runAmount, 10);
+                          mss1MeanQueue = Math.Round(mss1MeanQueue/runAmount, 10);
+                          mss2MeanQueue = Math.Round(mss2MeanQueue/runAmount, 10);
+                          failuresProbabiliy = Math.Round(failuresProbabiliy/runAmount, 10);
                           queueSwaps /= runAmount;
 
                           tableVer.AddRow(
-                              mss1RAver,
-                              mss2RAver,
+                              Math.Round(mss1RAver, 10),
+                              Math.Round(mss2RAver, 10),
                               quantity,
+                              failures,
                               timeLeave,
                               timeResidence,
                               mss1MeanQueue,

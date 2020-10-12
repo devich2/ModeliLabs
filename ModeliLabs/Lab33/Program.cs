@@ -24,7 +24,7 @@ namespace Lab33
                         try
                         {
                             
-                            double delayCreate = 1, time = 1000, delayProcess = 2;
+                            double delayCreate = 1, time = 1000, delayProcess = 1;
                             int maxQ = 10;
                             string distribution;
                 
@@ -159,7 +159,7 @@ namespace Lab33
                                     mss3.RAver,
                                     mss4.MeanQueue,
                                     mss4.RAver);
-                                delayProcess++;
+                                //delayProcess++;
                                 choice--;
                             }
                         

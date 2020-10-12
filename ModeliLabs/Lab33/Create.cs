@@ -21,29 +21,21 @@ namespace Lab33
 
        public override void OutAct(Element obj)
        {
-           if(NotCheckedElements.Count == NextElements.Count) // Create
-           {
-               base.OutAct(null);  //quantity
-               Tnext = Tcurr + GetDelay();
-           }
-           if(NotCheckedElements.Any())
+           base.OutAct(null);
+           Tnext = Tcurr + GetDelay();
+
+           while (NotCheckedElements.Any())
            {
                var nextElement = NotCheckedElements[ChooseNextElement()];
                if(nextElement.InAct(this) == ResultMove.Ok)
                {
                    NotCheckedElements = new List<Element>(NextElements);
+                   return;
                }
-               else
-               {
-                   BLockMove(nextElement);
-                   OutAct(null);
-               }
+               BLockMove(nextElement);
            }
-           else
-           {
-               NotCheckedElements = new List<Element>(NextElements);
-               Failure++;
-           }
+           NotCheckedElements = new List<Element>(NextElements);
+           Failure++;
        } 
    }
 }
