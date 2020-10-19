@@ -13,7 +13,7 @@ namespace Lab33
         public double RAver { get; set; }
         private bool FailWhenNoMove { get; set; }
 
-        public Processor[] Processors;
+        public Processor[] Processors; // List<int> {1, blocked = 2, 0}
 
         private Mss(double delay, int processorsAmount, string name) : base(name, delay)
         {

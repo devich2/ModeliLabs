@@ -290,7 +290,7 @@ namespace Laba4Task1
 
                           int quantity = 0,
                               queueSwaps = 0, failures = 0;
-                          runAmount = 10;
+                          runAmount = 1;
 
                           for (int i = 0; i < runAmount; i++)
                           {

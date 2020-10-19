@@ -62,6 +62,9 @@ namespace Lab33
                 case "unif":
                     delay = FunRand.Unif(DelayMean, DelayDev);
                     break;
+                case "erl":
+                    delay = FunRand.Erl(DelayDev, DelayMean);
+                    break;
                 case "":
                     delay = DelayMean;
                     break;
@@ -76,9 +79,8 @@ namespace Lab33
         {
             Tcurr = time;
         }
-        public virtual ResultMove InAct(Element obj) 
+        public virtual void InAct(Element obj) 
         {
-            return ResultMove.Ok;
         }
         public virtual void OutAct(Element obj)
         {

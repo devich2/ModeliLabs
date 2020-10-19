@@ -1,8 +1,9 @@
 ﻿﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+ using Lab4Task2;
 
-namespace Lab33
+ namespace Lab33
 {
     public class Model
     {
@@ -16,6 +17,7 @@ namespace Lab33
         private readonly bool _showInfo;
         double _tnext, _tcurr;
         int _eventIndex;
+        public double TimeForLab { get; set; }
         Processor _nextProcessor;
         public Model(List<Element> elements, bool showInfo)
         {
@@ -122,11 +124,12 @@ namespace Lab33
             foreach (Element e in _list)
             {
                 e.PrintResult();
-                if (e is Mss m)
+                if (e.GetType() == new Mss().GetType())
                 {
+                    Mss m = (Mss)e;
+                    m.MeanQueue /= _tcurr;
+                    m.RAver /= _tcurr;
                     Console.WriteLine("mean length of queue = " + m.MeanQueue +
-                                      "\nmax length of queue = " + m.MaxQueue +
-                                      "\nfailure probability = " + m.Failure / (double)(m.GetQuantity() + m.Failure + m.Queue + m.GetState()) +
                                       "\nload average = " + m.RAver);
                 }
             }
@@ -134,13 +137,14 @@ namespace Lab33
         // Total in the end
         public void PrintTotalResult()
         {
+            Mss lab = (Mss)_list.Find(x => x.Name.ToLower() == "mss5");
             Console.WriteLine("\n-------------TOTAL RESULT-------------");
-            Console.WriteLine(//"mean length of queue = " + MeanQueue +
-                "\nmax length of queue =  = " + MaxDetectedQueue +
-                "\nfailure probability = " + PFailure +
-                "\nload average = " + RAver +
-                "\nmax load = " + MaxSumStates+
-                "\nfailures = " + Failures);
+            Console.WriteLine("mean length of queue = " + MeanQueue +
+                              "\nload average = " + RAver +
+                              "\nmax load = " + MaxSumStates +
+                              "\nmax queue = " + MaxDetectedQueue +
+                              "\ntotal time in hospital = " + TimeForLab +
+                              "\ntime between patient arrivals to the lab = " + lab.DeltaTForLab / lab.GetQuantity());
         }
         
         // Every iteration
@@ -150,11 +154,12 @@ namespace Lab33
             foreach (Element e in _list)
             {
                 e.DoStatistics(_tnext - _tcurr);
-                if (e is Mss model)
+                if (e.GetType().Equals(new Mss().GetType()))
                 {
-                    if (model.Queue > MaxDetectedQueue)
+                    Mss model = (Mss)e;
+                    if (model.GetQueue() > MaxDetectedQueue)
                     {
-                        MaxDetectedQueue = model.Queue;
+                        MaxDetectedQueue = model.GetQueue();
                     }
                     states += model.GetState();
                 }
@@ -166,16 +171,24 @@ namespace Lab33
         }
 
         private void DoStatistics()
-        {
-            var smos = _list.OfType<Mss>().ToList();
-
-            foreach (var smo in smos)
+        {   
+            int countModels = 0;
+            foreach (Element e in _list)
             {
-                smo.RAver/=_tcurr;
-                smo.MeanQueue/=_tcurr;
+                if (e.GetType() == new Mss().GetType())
+                {
+                    Mss model = (Mss)e;
+                    countModels++;
+                    MeanQueue += model.MeanQueue / _tcurr;
+                    PFailure += model.Failure / (double)(model.GetQuantity() + model.Failure + model.GetQueue() + model.GetState());
+                    RAver += model.RAver / _tcurr;
+                }
+                Failures += e.Failure;
             }
-            Failures = _list.Sum(x=>x.Failure);
-            PFailure = Failures/(double)_list.First().GetQuantity();
+            MeanQueue /= countModels;
+            PFailure /= countModels;
+            RAver /= countModels;
+            CountTimeForLab();
         }
 
         private void InitNotChecked()
@@ -184,6 +197,22 @@ namespace Lab33
             {
                 t.NotCheckedElements = t.NextElements;
             }
+        }
+        private double CountTotalTime()
+        {
+            double time = 0;
+            foreach (Element e in _list)
+            {
+                if (e is Mss model)
+                {
+                    time += model.RAver + model.MeanQueue;
+                }
+            }
+            return time;
+        }
+        private void CountTimeForLab()
+        {
+            TimeForLab = CountTotalTime() / (double)((Create)_list.Find(x => x.GetType() == new Create(0).GetType())).GetQuantity();
         }
     }
 }

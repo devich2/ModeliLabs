@@ -1,4 +1,5 @@
-﻿﻿using System.Collections.Generic;
+﻿﻿using System;
+ using System.Collections.Generic;
 using System.Linq;
 
 namespace Lab33
@@ -21,21 +22,10 @@ namespace Lab33
 
        public override void OutAct(Element obj)
        {
+           Random rand = new Random();
            base.OutAct(null);
            Tnext = Tcurr + GetDelay();
-
-           while (NotCheckedElements.Any())
-           {
-               var nextElement = NotCheckedElements[ChooseNextElement()];
-               if(nextElement.InAct(this) == ResultMove.Ok)
-               {
-                   NotCheckedElements = new List<Element>(NextElements);
-                   return;
-               }
-               BLockMove(nextElement);
-           }
-           NotCheckedElements = new List<Element>(NextElements);
-           Failure++;
+           NextElements[rand.Next(0, NextElements.Count)].InAct(this);
        } 
    }
 }

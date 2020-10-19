@@ -1,4 +1,6 @@
-﻿namespace Lab33
+﻿using Lab4Task2;
+
+namespace Lab33
 {
     public class Processor : Element
     {
@@ -8,6 +10,10 @@
         {
             Parent = parent;
             Name = $"PROCESSOR#{Parent.Processors.Length}";
+        }
+
+        public Processor()
+        {
         }
     }
 }

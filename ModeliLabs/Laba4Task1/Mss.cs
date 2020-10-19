@@ -15,6 +15,13 @@ namespace Laba4
 
         public Processor[] Processors;
         public List<Mss> NeighbourElements { get; set; }
+        public int[] Queues { get; private set; }
+        public double[] Delays { get; private set; }
+        public double[] Frequency { get; private set; }
+        public double DeltaTForLab { get; set; }
+        private double PreviousForLab { get; set; }
+        private bool _isUnique;
+        private bool _isFirstInTheProcess;
 
         private Mss(double delay, int processorsAmount, string name) : base(name, delay)
         {
@@ -68,10 +75,18 @@ namespace Laba4
         {
             foreach (var t in NeighbourElements)
             {
-                if(this.Queue - t.Queue >= 2)
+                if(Queue - t.Queue >= 2)
                 {
                     t.Queue++;
-                    this.Queue--;
+                    Queue--;
+                    SwapQueue++;
+                    break;
+                }
+
+                if(t.Queue - Queue >= 2)
+                {
+                    Queue++;
+                    t.Queue--;
                     SwapQueue++;
                     break;
                 }
@@ -82,12 +97,12 @@ namespace Laba4
         {
             freedElement.Tnext = Double.MaxValue;
             freedElement.State = 0;
+            CheckSwap();
             if (Queue > 0)
             {
                 Queue--;
                 freedElement.State = 1;
                 freedElement.Tnext = freedElement.Tcurr + GetDelay();
-                CheckSwap();
             }   
         }
         
@@ -95,7 +110,7 @@ namespace Laba4
         {
             Mss smoWithBlockedProcessor = (Mss)PreviousElements.FirstOrDefault(x=>
             {
-                if(x is Mss mss)
+                if(x is Mss mss && !mss.BlockingForbidden)
                 {
                     return mss.Processors.Any(p=>p.State == 2);
                 }

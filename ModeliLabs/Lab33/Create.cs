@@ -24,10 +24,10 @@ namespace Lab33
            base.OutAct(null);
            Tnext = Tcurr + GetDelay();
 
-           while (NotCheckedElements.Any())
+           while (NotCheckedElements.Any()) // somo
            {
                var nextElement = NotCheckedElements[ChooseNextElement()];
-               if(nextElement.InAct(this) == ResultMove.Ok)
+               if(nextElement.InAct(this) == ResultMove.Ok) //ok
                {
                    NotCheckedElements = new List<Element>(NextElements);
                    return;

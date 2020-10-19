@@ -33,5 +33,15 @@ namespace Lab33
             a = timeMean + timeDeviation * (rand.NextDouble() * 2 - 1);
             return a;
         }
+        public static double Erl (double k, double expectValue)
+        {
+            double r, sum = 0;
+            for(int i = 0; i < k; i++)    
+            {
+                sum += Exp(expectValue);
+            }
+            r = - 1 / k / expectValue + Math.Log(sum);
+            return r;
+        }
     }
 }

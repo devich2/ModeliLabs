@@ -1,4 +1,6 @@
-﻿﻿namespace Lab33
+﻿﻿using Lab4Task2;
+
+ namespace Lab33
 {
     public class Path
     {
