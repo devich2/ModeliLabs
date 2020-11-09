@@ -290,13 +290,13 @@ namespace Laba4Task1
 
                           int quantity = 0,
                               queueSwaps = 0, failures = 0;
-                          runAmount = 1;
+                          runAmount = 5;
 
                           for (int i = 0; i < runAmount; i++)
                           {
                               Create c = new Create(0.5, "exp", "CREATOR");
-                              Mss mss1 = new Mss(0.3, 1, 3, "exp", "CASHIER1", true);
-                              Mss mss2 = new Mss(0.3, 1, 3, "exp", "CASHIER2", true);
+                              Mss mss1 = new Mss(0.1, 1, 3, "exp", "CASHIER1", true);
+                              Mss mss2 = new Mss(0.1, 1, 3, "exp", "CASHIER2", true);
                               Despose d = new Despose(2.0, "DESPOSER");
 
                               Path helper = new Path();

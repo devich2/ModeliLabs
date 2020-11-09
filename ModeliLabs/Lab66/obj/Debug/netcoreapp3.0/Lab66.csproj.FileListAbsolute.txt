@@ -1,0 +1,15 @@
+C:\Users\Devid\Desktop\modeli\ModeliLabs\ModeliLabs\Lab66\bin\Debug\netcoreapp3.0\Lab66.exe
+C:\Users\Devid\Desktop\modeli\ModeliLabs\ModeliLabs\Lab66\bin\Debug\netcoreapp3.0\Lab66.deps.json
+C:\Users\Devid\Desktop\modeli\ModeliLabs\ModeliLabs\Lab66\bin\Debug\netcoreapp3.0\Lab66.runtimeconfig.json
+C:\Users\Devid\Desktop\modeli\ModeliLabs\ModeliLabs\Lab66\bin\Debug\netcoreapp3.0\Lab66.runtimeconfig.dev.json
+C:\Users\Devid\Desktop\modeli\ModeliLabs\ModeliLabs\Lab66\bin\Debug\netcoreapp3.0\Lab66.dll
+C:\Users\Devid\Desktop\modeli\ModeliLabs\ModeliLabs\Lab66\bin\Debug\netcoreapp3.0\Lab66.pdb
+C:\Users\Devid\Desktop\modeli\ModeliLabs\ModeliLabs\Lab66\bin\Debug\netcoreapp3.0\ConsoleTables.dll
+C:\Users\Devid\Desktop\modeli\ModeliLabs\ModeliLabs\Lab66\obj\Debug\netcoreapp3.0\Lab66.csprojAssemblyReference.cache
+C:\Users\Devid\Desktop\modeli\ModeliLabs\ModeliLabs\Lab66\obj\Debug\netcoreapp3.0\Lab66.AssemblyInfoInputs.cache
+C:\Users\Devid\Desktop\modeli\ModeliLabs\ModeliLabs\Lab66\obj\Debug\netcoreapp3.0\Lab66.AssemblyInfo.cs
+C:\Users\Devid\Desktop\modeli\ModeliLabs\ModeliLabs\Lab66\obj\Debug\netcoreapp3.0\Lab66.csproj.CoreCompileInputs.cache
+C:\Users\Devid\Desktop\modeli\ModeliLabs\ModeliLabs\Lab66\obj\Debug\netcoreapp3.0\Lab66.csproj.CopyComplete
+C:\Users\Devid\Desktop\modeli\ModeliLabs\ModeliLabs\Lab66\obj\Debug\netcoreapp3.0\Lab66.dll
+C:\Users\Devid\Desktop\modeli\ModeliLabs\ModeliLabs\Lab66\obj\Debug\netcoreapp3.0\Lab66.pdb
+C:\Users\Devid\Desktop\modeli\ModeliLabs\ModeliLabs\Lab66\obj\Debug\netcoreapp3.0\Lab66.genruntimeconfig.cache

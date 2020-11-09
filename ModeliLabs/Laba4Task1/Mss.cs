@@ -82,14 +82,6 @@ namespace Laba4
                     SwapQueue++;
                     break;
                 }
-
-                if(t.Queue - Queue >= 2)
-                {
-                    Queue++;
-                    t.Queue--;
-                    SwapQueue++;
-                    break;
-                }
             }
         }
         
@@ -97,12 +89,15 @@ namespace Laba4
         {
             freedElement.Tnext = Double.MaxValue;
             freedElement.State = 0;
-            CheckSwap();
             if (Queue > 0)
             {
                 Queue--;
                 freedElement.State = 1;
                 freedElement.Tnext = freedElement.Tcurr + GetDelay();
+            }   
+            if (Queue > 0)
+            {
+                CheckSwap();
             }   
         }
         

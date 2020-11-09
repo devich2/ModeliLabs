@@ -9,7 +9,7 @@ namespace Laba4
         public int Queue { get; private set; }
         public int MaxQueue { get; private set; }
         public double MeanQueue { get; set; }
-        public int SwapQueue { get; set; }
+      
         public double RAver { get; set; }
         private bool BlockingForbidden { get; set; }
 
@@ -64,19 +64,6 @@ namespace Laba4
             return result;
         }
         
-        public void CheckSwap()
-        {
-            foreach (var t in NeighbourElements)
-            {
-                if(this.Queue - t.Queue >= 2)
-                {
-                    t.Queue++;
-                    this.Queue--;
-                    SwapQueue++;
-                    break;
-                }
-            }
-        }
         
         private  void BaseOutAct(Processor freedElement)
         {
@@ -87,7 +74,6 @@ namespace Laba4
                 Queue--;
                 freedElement.State = 1;
                 freedElement.Tnext = freedElement.Tcurr + GetDelay();
-                CheckSwap();
             }   
         }
         

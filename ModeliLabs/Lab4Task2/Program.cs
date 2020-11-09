@@ -23,12 +23,12 @@ namespace Lab4Task2
             for (int j = 0; j < runAmount; j++)
             {
                 Create c = new Create(15, "exp", "CREATOR");
-                Mss mss1 = new Mss(new double[] { 15, 30, 40 }, new double[] { 0.5, 0.1, 0.4 }, 2, "exp", "MSS1", true);// лікарі в приймальній
-                Mss mss2 = new Mss(3, 8, 3, "unf", "MSS2", true); // з приймалки в палату - потрібен супровід
-                Mss mss3 = new Mss(2, 5, n, "unf", "MSS3", true); // з приймалки в лабу - непортібен супровід
+                Mss mss1 = new Mss(new double[] { 15, 30, 40 }, new double[] { 0.5, 0.1, 0.4 }, 5, "exp", "MSS1", true);// лікарі в приймальній
+                Mss mss2 = new Mss(2, 4, 3, "unf", "MSS2", true); // з приймалки в палату - потрібен супровід
+                Mss mss3 = new Mss(1, 3, n, "unf", "MSS3", true); // з приймалки в лабу - непортібен супровід
                 Mss mss4 = new Mss(4.5, 3, 1, "erl", "MSS4", true); // реєстратутра в лабі
-                Mss mss5 = new Mss(4, 2, 2, "erl", "MSS5", true); // обслідування в лабі
-                Mss mss6 = new Mss(2, 5, n, "unf", "MSS6", true); // з лаби в приймалку -непотрібен супровід
+                Mss mss5 = new Mss(4, 2, 1, "erl", "MSS5", true); // обслідування в лабі
+                Mss mss6 = new Mss(2, 5, n, "unf", "MSS6", true); // з лаби в приймалку - непотрібен супровід
                 Despose d = new Despose(2.0, "DESPOSER");
 
                 Path helper = new Path();

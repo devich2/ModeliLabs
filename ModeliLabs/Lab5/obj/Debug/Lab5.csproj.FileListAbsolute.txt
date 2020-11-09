@@ -1,0 +1,13 @@
+C:\Users\Devid\Desktop\modeli\ModeliLabs\ModeliLabs\Lab5\bin\Debug\Lab5.exe.config
+C:\Users\Devid\Desktop\modeli\ModeliLabs\ModeliLabs\Lab5\bin\Debug\Lab5.exe
+C:\Users\Devid\Desktop\modeli\ModeliLabs\ModeliLabs\Lab5\bin\Debug\Lab5.pdb
+C:\Users\Devid\Desktop\modeli\ModeliLabs\ModeliLabs\Lab5\bin\Debug\ConsoleTables.dll
+C:\Users\Devid\Desktop\modeli\ModeliLabs\ModeliLabs\Lab5\bin\Debug\ConsoleTables.pdb
+C:\Users\Devid\Desktop\modeli\ModeliLabs\ModeliLabs\Lab5\obj\Debug\Lab5.csprojAssemblyReference.cache
+C:\Users\Devid\Desktop\modeli\ModeliLabs\ModeliLabs\Lab5\obj\Debug\Lab5.Chart.resources
+C:\Users\Devid\Desktop\modeli\ModeliLabs\ModeliLabs\Lab5\obj\Debug\Lab5.Properties.Resources.resources
+C:\Users\Devid\Desktop\modeli\ModeliLabs\ModeliLabs\Lab5\obj\Debug\Lab5.csproj.GenerateResource.cache
+C:\Users\Devid\Desktop\modeli\ModeliLabs\ModeliLabs\Lab5\obj\Debug\Lab5.csproj.CoreCompileInputs.cache
+C:\Users\Devid\Desktop\modeli\ModeliLabs\ModeliLabs\Lab5\obj\Debug\Lab5.csproj.CopyComplete
+C:\Users\Devid\Desktop\modeli\ModeliLabs\ModeliLabs\Lab5\obj\Debug\Lab5.exe
+C:\Users\Devid\Desktop\modeli\ModeliLabs\ModeliLabs\Lab5\obj\Debug\Lab5.pdb

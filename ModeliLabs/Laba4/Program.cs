@@ -240,14 +240,14 @@ namespace Laba4
                                   Math.Round(mss4.RAver, 10));
                           }
 
-                          mss1MeanQueue = Math.Round(mss1MeanQueue, 3);
-                          mss2MeanQueue = Math.Round(mss2MeanQueue, 3);
-                          mss3MeanQueue = Math.Round(mss3MeanQueue, 3);
+                          mss1MeanQueue = Math.Round(mss1MeanQueue, 10);
+                          mss2MeanQueue = Math.Round(mss2MeanQueue, 10);
+                          mss3MeanQueue = Math.Round(mss3MeanQueue, 10);
                           mss4MeanQueue = Math.Round(mss4MeanQueue, 8);
-                          mss1RAver = Math.Round(mss1RAver, 3);
-                          mss2RAver = Math.Round(mss2RAver, 3);
-                          mss3RAver = Math.Round(mss3RAver, 3);
-                          mss4RAver = Math.Round(mss4RAver, 3);
+                          mss1RAver = Math.Round(mss1RAver, 10);
+                          mss2RAver = Math.Round(mss2RAver, 10);
+                          mss3RAver = Math.Round(mss3RAver, 10);
+                          mss4RAver = Math.Round(mss4RAver, 10);
 
                           tableVer.AddRow(
                               mss1MeanQueue,
@@ -267,6 +267,15 @@ namespace Laba4
                               0.054,
                               0.062,
                               0.036);
+                          tableVer.AddRow(
+                              100 * Math.Round(Math.Abs(mss1MeanQueue-1.786)/1.786, 5),
+                              100 * Math.Round(Math.Abs(mss2MeanQueue-0.003)/0.003, 5),
+                              100 * Math.Round(Math.Abs(mss3MeanQueue-0.004)/0.004, 5),
+                              100 * Math.Round(Math.Abs(mss4MeanQueue-0.00001)/0.00001, 5),
+                              100 * Math.Round(Math.Abs(mss1RAver-0.714)/0.714, 5),
+                              100 * Math.Round(Math.Abs(mss2RAver-0.054)/0.054, 5),
+                              100 * Math.Round(Math.Abs(mss3RAver-0.062)/0.062, 5),
+                              100 * Math.Round(Math.Abs(mss4RAver-0.036)/0.036, 5));
                           tableVer.Write(Format.Alternative);
                           Console.WriteLine();
                           Console.ReadKey();
